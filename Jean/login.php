@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
 
         <p>Veuillez saisir vos identifiants</p>
-        <h1>TEST 1</h1>
+        <h1> Connexion </h1>
 
         <form action="" method="post" class="form-login">
             <div class="email-part">
