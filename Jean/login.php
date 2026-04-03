@@ -5,7 +5,7 @@ session_start();
 $success = isset($_GET['connexion']) && $_GET['connexion'] === 'ok' ? 'Connexion réussie ! Ravie de vous revoir !' : '';
 
 try {
-    $conn = new PDO('mysql:host=localhost;dbname=gtb_web;charset=utf8mb4', 'root', 'root');
+    $conn = new PDO('mysql:host=localhost;dbname=gtb_website;charset=utf8mb4', 'root', 'root');
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
@@ -16,7 +16,7 @@ $erreur = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email    = trim($_POST['email']);
     $password = $_POST['password'];
-    
+
     if (empty($email) || empty($password)) {
         $erreur = "Tous les champs sont obligatoires.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
